@@ -1,7 +1,3 @@
-/**
- * 高佣金銀行數位帳戶 MGM 推薦連結設定檔
- * 已綁定使用者專屬好友推薦連結：永豐大戶 DAWHO (tko=6U1H2HG) & 台新 Richart (sn=9Y63I)
- */
 const AFFILIATE_GEARS = [
   {
     tag: "30萬內 3.5% 高利",
@@ -18,17 +14,17 @@ const AFFILIATE_GEARS = [
     cta: "透過邀請連結開立大戶 DAWHO"
   },
   {
-    tag: "最高 40萬內 3%",
-    title: "聯邦 New New Bank（新戶 10%）",
-    desc: "新戶 15 萬內享 10% 優惠，舊戶解任務享金級 3%（額度高達 40 萬），跨轉跨提各 10 次免費。",
-    url: "https://newnewbank.com.tw/",
-    cta: "了解 New New Bank 方案"
+    tag: "護卡防盜刷必備",
+    title: "RFID 防盜刷多卡位護照／金融卡夾",
+    desc: "擁有多家銀行提款卡與信用卡必備，阻隔 RFID 晶片側錄盜刷，整理多張數位帳戶金融卡最整齊。",
+    url: "https://s.shopee.tw/8AXunjNd85",
+    cta: "查看防盜刷卡夾"
   },
   {
-    tag: "大額資金 100萬內",
-    title: "將來銀行 NEXT BANK（1.85%）",
-    desc: "純網銀大額存錢首選，5萬～100萬享 1.85%，超過 100 萬仍有 1.6% 階梯利率。",
-    url: "https://www.nextbank.com.tw/",
-    cta: "前往將來銀行開戶"
+    tag: "居家省錢再加碼",
+    title: "Wi-Fi 智慧計電插座（抓出吃電怪獸）",
+    desc: "理財從省電費開始！插上就能監控老舊家電耗電度數，每月多省下的電費剛好放進高利活存。",
+    url: "https://s.shopee.tw/5fqZmHhFx7",
+    cta: "查看省電計電插座"
   }
 ];
