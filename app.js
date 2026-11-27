@@ -143,6 +143,27 @@ if (typeof document !== "undefined") {
   document.querySelectorAll("#depPresets .chip").forEach((chip) => {
     chip.addEventListener("click", () => {
       depInput.value = chip.dataset.amt;
+  const copyBtn = document.getElementById("copyResultBtn");
+  if (copyBtn) {
+    copyBtn.addEventListener("click", () => {
+      const amt = Number(depInput.value) || 0;
+      const mode = modeSelect.value === "new" ? "全新戶" : "一般/舊戶";
+      const rows = calcBankInterests(amt, modeSelect.value);
+      const best = rows[0];
+      const summary = best
+        ? `【2026 台灣高利活存試算】\n存入 NT$${amt.toLocaleString()}（${mode}）\n最優銀行：${best.name}（${best.rate}%）\n預估月息：NT$${best.monthlyInterest.toLocaleString()}｜年息：NT$${best.annualInterest.toLocaleString()}（實質 ${best.effectiveRate}%）\n👉 免費試算：https://jimmycmhsieh0801-cloud.github.io/tw-bank-interest-calc/`
+        : "https://jimmycmhsieh0801-cloud.github.io/tw-bank-interest-calc/";
+      const done = () => {
+        copyBtn.textContent = "✓ 已複製試算摘要，快去貼上分享！";
+        setTimeout(() => { copyBtn.textContent = "📋 一鍵複製試算結果分享（貼到 Line 群 / Threads 討論）"; }, 2200);
+        if (typeof gtag === "function") gtag("event", "share_result_copy", { tool: "tw-bank-interest-calc" });
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(summary).then(done).catch(() => {});
+      }
+    });
+  }
+
       render();
     });
   });
